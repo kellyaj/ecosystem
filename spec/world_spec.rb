@@ -37,12 +37,44 @@ describe World do
     end
   end
 
-  describe "#cycle" do
-    it "should cycle to the next day upon command" do
+  describe "#death" do
+    it "should be able to kill a lifeform" do
       world = World.new(10,10)
+      cabby = Cabbage.new
+      world.add_lifeform(cabby)
+      world.population.should == 1
+      world.kill(cabby)
+      world.population.should == 0
+    end
+  end
+
+  describe "#cycle" do
+    let (:world) { World.new(10,10) }
+    it "should cycle to the next day upon command" do
       world.day.should == 1
-      world.cycle
+      world.cycle(1)
       world.day.should == 2
+    end
+
+    it "should cycle 100 times upon command" do
+      world.day.should == 1
+      world.cycle(100)
+      world.day.should == 101
+    end
+
+    it "should add one age to each lifeform per cycle" do
+      cabby = Cabbage.new
+      world.add_lifeform(cabby)
+      cabby.age.should == 0
+      world.cycle(1)
+      cabby.age.should == 1
+    end
+
+    it "should check for old age deaths after each cycle" do
+      world.add_lifeform(Cabbage.new)
+      world.population.should == 1
+      world.cycle(100)
+      world.population.should == 0
     end
   end
 end
