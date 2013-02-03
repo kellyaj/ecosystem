@@ -1,8 +1,8 @@
 require 'cabbage'
-
+require 'world'
 describe Cabbage do
 
-  let (:c) {Cabbage.new(1)}
+  let (:c) {Cabbage.new(World.new(10),1)}
 
   describe "#birth" do
     it "should be born with an age of 0" do

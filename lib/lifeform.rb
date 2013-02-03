@@ -1,10 +1,12 @@
 require 'cabbage'
 
-class Lifeform
+class LifeForm
 
-  attr_accessor :type
 
-  def initialize(type)
-    @type = type.class
+  def initialize
+  end
+
+  def old_age?
+
   end
 end
