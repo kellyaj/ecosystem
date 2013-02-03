@@ -38,9 +38,9 @@ class LifeForm
 
   def perform_movement
     @movement.times do
-      @world.land[@position].delete(self)
       new_position = [@position - 1, @position + 1].sample
       @world.land[new_position] << self
+      @world.land[@position].delete(self)
       @position = new_position
     end
   end

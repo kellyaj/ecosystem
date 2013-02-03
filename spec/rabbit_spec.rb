@@ -1,7 +1,13 @@
+require 'pry'
 require 'rabbit'
+require 'world'
 describe Rabbit do
 
-  let (:r) { Rabbit.new(World.new(10),1) }
+  let (:world) { World.new(100) }
+  let (:r) { Rabbit.new(world, 50) }
+  before(:each) do
+    world.add_lifeform(r)
+  end
 
   describe "#birth" do
     it "should be born with an age of 0" do
@@ -13,7 +19,6 @@ describe Rabbit do
     end
 
     it "should be born into a position in the world" do
-      r.world.add_lifeform(r)
       r.world.land[r.position].should include(r)
     end
 
@@ -35,5 +40,19 @@ describe Rabbit do
   end
 
   describe "#life" do
+
+    it "should breed" do
+      85.times do
+        r.cycle
+      end
+      r.age.should  == 85
+      world.population.should == 2
+    end
+
+    it "should test" do
+      100.times do
+        r.cycle
+      end
+    end
   end
 end
