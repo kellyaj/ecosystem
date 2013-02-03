@@ -2,7 +2,9 @@ class LifeForm
 
   attr_accessor :age, :lifespan, :position, :world
 
-  def initialize
+  def initialize(world, position)
+    @world = world
+    @position = position
     @age = 0
   end
 

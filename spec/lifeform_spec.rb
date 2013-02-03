@@ -1,8 +1,12 @@
 require 'world'
 describe "LifeForm" do
-  let (:life) { LifeForm.new }
+  let (:life) { LifeForm.new(World.new(10), 1) }
 
   describe "#birth" do
+    it "should be born into a world" do
+      life.world.should be_a(World)
+    end
+
     it "should be born with an age of 0" do
       life.age.should == 0
     end
