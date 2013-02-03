@@ -37,6 +37,7 @@ class World
       @day += 1
       add_age
       old_age_check
+      same_space_check
     end
   end
 
@@ -63,6 +64,11 @@ class World
   end
 
   def same_space_check
+    @land.each do |space|
+      if space.size >= 2
+        kill(space.sample)
+      end
+    end
   end
 
 end
