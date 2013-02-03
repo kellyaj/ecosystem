@@ -1,6 +1,7 @@
 require 'world'
 describe "LifeForm" do
-  let (:life) { LifeForm.new(World.new(10), 1) }
+  let (:world) { World.new(10) }
+  let (:life) { LifeForm.new(world, 1) }
 
   describe "#birth" do
     it "should be born into a world" do
@@ -34,10 +35,19 @@ describe "LifeForm" do
     end
   end
 
+  describe "#breeding" do
+    it "should create a new copy of itself when it reaches breeding age" do
+      world.add_lifeform(life)
+      life.breeding_age = 50
+      50.times do
+        life.cycle
+      end
+      life.world.lifeforms.count.should == 2
+    end
+  end
+
   describe "#death" do
     it "should die when it reaches old age" do
-      world = World.new(10)
-      life.world = world
       life.position = 1
       world.add_lifeform(life)
       life.lifespan = 100
