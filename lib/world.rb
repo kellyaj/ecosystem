@@ -29,6 +29,7 @@ class World
 
   def add_lifeform(lifeform)
     @lifeforms << lifeform
+    @land[lifeform.position] << lifeform
   end
 
   def cycle(amount)

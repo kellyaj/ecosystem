@@ -31,7 +31,6 @@ describe World do
 
   describe "#environment" do
     let (:world) { World.new(10) }
-
     it "should kill one lifeform at the end of a day if it occupies same space" do
       cabby = Cabbage.new(1)
       cabby2 = Cabbage.new(1)
@@ -40,6 +39,12 @@ describe World do
       world.population.should == 2
       world.cycle(1)
       world.population.should == 1
+    end
+
+    it "should be able to add a lifeform to the correct world_row" do
+      cabby = Cabbage.new(1)
+      world.add_lifeform(cabby)
+      world.land[1].should include(cabby)
     end
   end
 
