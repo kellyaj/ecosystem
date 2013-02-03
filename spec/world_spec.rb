@@ -3,11 +3,10 @@ describe World do
 
   describe "#startup" do
 
-    let (:world) { World.new(10,10) }
+    let (:world) { World.new(10) }
 
-    it "should begin with 10x10 tiles" do
-      world.x.should == 10
-      world.y.should == 10
+    it "should begin with 10 world rows" do
+      world.land.size.should == 10
     end
 
     it "should begin on day one" do
@@ -31,11 +30,7 @@ describe World do
   end
 
   describe "#environment" do
-    let (:world) { World.new(10,10) }
-    it "should have an area of 100" do
-      world = World.new(10,10)
-      world.area.should == 100
-    end
+    let (:world) { World.new(10) }
 
     it "should kill one lifeform at the end of a day if it occupies same space" do
       cabby = Cabbage.new(1,1)
@@ -50,7 +45,7 @@ describe World do
 
   describe "#death" do
     it "should be able to kill a lifeform" do
-      world = World.new(10,10)
+      world = World.new(10)
       cabby = Cabbage.new(1,1)
       world.add_lifeform(cabby)
       world.population.should == 1
@@ -60,7 +55,7 @@ describe World do
   end
 
   describe "#cycle" do
-    let (:world) { World.new(10,10) }
+    let (:world) { World.new(10) }
     it "should cycle to the next day upon command" do
       world.day.should == 1
       world.cycle(1)

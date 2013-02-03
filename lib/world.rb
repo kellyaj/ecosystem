@@ -8,17 +8,19 @@ require 'pry'
 require 'lifeform'
 class World
 
-  attr_accessor :x, :y, :day, :lifeforms
+  attr_accessor :land, :day, :lifeforms
 
-  def initialize(x,y)
-    @x = x
-    @y = y
+  def initialize(world_rows)
+    @land = []
+    add_land(world_rows)
     @day = 1
     @lifeforms = []
   end
 
-  def area
-    @x * @y
+  def add_land(world_rows)
+    world_rows.times do |row|
+      @land[row] = []
+    end
   end
 
   def population
