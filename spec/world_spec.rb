@@ -31,7 +31,7 @@ describe World do
 
   describe "#environment" do
     let (:world) { World.new(10) }
-    it "should kill one lifeform at the end of a day if it occupies same space" do
+    it "should smite one lifeform at the end of a day if it occupies same space" do
       cabby = Cabbage.new(self,1)
       cabby2 = Cabbage.new(self,1)
       world.add_lifeform(cabby)
@@ -49,12 +49,12 @@ describe World do
   end
 
   describe "#death" do
-    it "should be able to kill a lifeform" do
+    it "should be able to smite a lifeform" do
       world = World.new(10)
-      cabby = Cabbage.new(self,1)
+      cabby = Cabbage.new(world,1)
       world.add_lifeform(cabby)
       world.population.should == 1
-      world.kill(cabby)
+      world.smite(cabby)
       world.population.should == 0
     end
   end
@@ -73,19 +73,5 @@ describe World do
       world.day.should == 101
     end
 
-    it "should add one age to each lifeform per cycle" do
-      cabby = Cabbage.new(self,1)
-      world.add_lifeform(cabby)
-      cabby.age.should == 0
-      world.cycle(1)
-      cabby.age.should == 1
-    end
-
-    it "should check for old age deaths after each cycle" do
-      world.add_lifeform(Cabbage.new(self,1))
-      world.population.should == 1
-      world.cycle(130)
-      world.population.should == 0
-    end
   end
 end
