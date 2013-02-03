@@ -31,9 +31,20 @@ describe World do
   end
 
   describe "#environment" do
+    let (:world) { World.new(10,10) }
     it "should have an area of 100" do
       world = World.new(10,10)
       world.area.should == 100
+    end
+
+    it "should kill one lifeform at the end of a day if it occupies same space" do
+      cabby = Cabbage.new(1,1)
+      cabby2 = Cabbage.new(1,1)
+      world.add_lifeform(cabby)
+      world.add_lifeform(cabby2)
+      world.population.should == 2
+      world.cycle(1)
+      world.population.should == 1
     end
   end
 

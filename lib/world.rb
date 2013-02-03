@@ -55,5 +55,11 @@ class World
     @lifeforms.delete(lifeform)
   end
 
+  def same_space?(lifeform1, lifeform2)
+    lifeform1.position == lifeform2.position
+  end
+
+  def same_space_check
+  end
 
 end

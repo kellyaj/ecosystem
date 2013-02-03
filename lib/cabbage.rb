@@ -10,4 +10,8 @@ class Cabbage
     @y = y
   end
 
+  def position
+    [@x, @y]
+  end
+
 end
