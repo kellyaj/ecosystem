@@ -1,4 +1,4 @@
-require 'ecosystem'
+require 'lifeform'
 
 class Animal < LifeForm
 

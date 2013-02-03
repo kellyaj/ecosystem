@@ -1,4 +1,5 @@
-require 'ecosystem'
+require 'lifeform'
+
 class Plant < LifeForm
 
   def initialize(world, position)

@@ -1,4 +1,5 @@
 require 'garlic'
+require 'cabbage'
 require 'world'
 
 describe Garlic do

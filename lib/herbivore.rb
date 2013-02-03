@@ -1,4 +1,5 @@
-require 'ecosystem'
+require 'animal'
+
 class Herbivore < Animal
 
   def initialize(world, position)

@@ -1,1 +1,1 @@
-require 'ecosystem'
+require 'animal'

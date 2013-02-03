@@ -1,4 +1,4 @@
-require 'ecosystem'
+require 'lifeform'
 require 'pry'
 
 class World

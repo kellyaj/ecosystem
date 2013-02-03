@@ -1,4 +1,5 @@
-require 'ecosystem'
+require 'world'
+
 require 'pry'
 class LifeForm
 

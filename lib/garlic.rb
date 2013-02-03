@@ -1,4 +1,6 @@
-require 'ecosystem'
+require 'plant'
+
+
 class Garlic < Plant
 
   def initialize(world, position)
