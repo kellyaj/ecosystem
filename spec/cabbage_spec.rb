@@ -2,16 +2,15 @@ require 'cabbage'
 
 describe Cabbage do
 
-  let (:c) {Cabbage.new(1,1)}
+  let (:c) {Cabbage.new(1)}
 
   describe "#birth" do
     it "should be born with an age of 0" do
       c.age.should == 0
     end
 
-    it "should spawn with an x and y coordinate" do
-      c.x.should == 1
-      c.y.should == 1
+    it "should be able to spawn in the first row" do
+      c.position.should == 1
     end
 
   end
@@ -25,9 +24,6 @@ describe Cabbage do
       c.lifespan.should == 100
     end
 
-    it "should have a position" do
-      c.position.should == [1,1]
-    end
   end
 
 end

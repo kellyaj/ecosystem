@@ -1,17 +1,12 @@
 class Cabbage
 
-  attr_accessor :movement, :lifespan, :age, :x, :y
+  attr_accessor :movement, :lifespan, :age, :position
 
-  def initialize(x, y)
+  def initialize(position)
     @movement = 0
     @lifespan = 100
     @age = 0
-    @x = x
-    @y = y
-  end
-
-  def position
-    [@x, @y]
+    @position = position
   end
 
 end

@@ -18,12 +18,12 @@ describe World do
     end
 
     it "should be able to add a lifeform" do
-      world.add_lifeform(Cabbage.new(1,1))
+      world.add_lifeform(Cabbage.new(1))
       world.lifeforms.count.should == 1
     end
 
     it "should be able to count the population" do
-      world.add_lifeform(Cabbage.new(1,1))
+      world.add_lifeform(Cabbage.new(1))
       world.population.should == 1
     end
 
@@ -33,8 +33,8 @@ describe World do
     let (:world) { World.new(10) }
 
     it "should kill one lifeform at the end of a day if it occupies same space" do
-      cabby = Cabbage.new(1,1)
-      cabby2 = Cabbage.new(1,1)
+      cabby = Cabbage.new(1)
+      cabby2 = Cabbage.new(1)
       world.add_lifeform(cabby)
       world.add_lifeform(cabby2)
       world.population.should == 2
@@ -46,7 +46,7 @@ describe World do
   describe "#death" do
     it "should be able to kill a lifeform" do
       world = World.new(10)
-      cabby = Cabbage.new(1,1)
+      cabby = Cabbage.new(1)
       world.add_lifeform(cabby)
       world.population.should == 1
       world.kill(cabby)
@@ -69,7 +69,7 @@ describe World do
     end
 
     it "should add one age to each lifeform per cycle" do
-      cabby = Cabbage.new(1,1)
+      cabby = Cabbage.new(1)
       world.add_lifeform(cabby)
       cabby.age.should == 0
       world.cycle(1)
@@ -77,7 +77,7 @@ describe World do
     end
 
     it "should check for old age deaths after each cycle" do
-      world.add_lifeform(Cabbage.new(1,1))
+      world.add_lifeform(Cabbage.new(1))
       world.population.should == 1
       world.cycle(100)
       world.population.should == 0
