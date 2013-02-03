@@ -1,5 +1,7 @@
 require 'Lifeform'
-class Cabbage < LifeForm
+require 'plant'
+
+class Cabbage < Plant
 
   def initialize(world, position)
     super(world, position)

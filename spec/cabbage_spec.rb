@@ -5,6 +5,11 @@ describe Cabbage do
   let (:c) {Cabbage.new(World.new(10),1)}
 
   describe "#birth" do
+    it "should be born as a plant" do
+      c.is_a?(Plant).should be_true
+      c.is_a?(LifeForm).should be_true
+    end
+
     it "should be born with an age of 0" do
       c.age.should == 0
     end
