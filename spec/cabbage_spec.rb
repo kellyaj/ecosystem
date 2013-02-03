@@ -13,6 +13,16 @@ describe Cabbage do
       c.position.should == 1
     end
 
+    it "should be born into a world" do
+      c.world.should be_a(World)
+    end
+
+    it "should be born to a specific position" do
+      c.position.should == 1
+      c.world.add_lifeform(c)
+      c.world.land[1].should include(c)
+    end
+
   end
 
   describe "#attributes" do
