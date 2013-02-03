@@ -1,12 +1,8 @@
 require 'ecosystem'
-class Plant < LifeForm
+
+class Animal < LifeForm
 
   def initialize(world, position)
     super(world, position)
-    @movement = 0
-  end
-
-  def cycle
-    super
   end
 end

@@ -1,6 +1,10 @@
 require 'pry'
 require 'rabbit'
+require 'animal'
 require 'world'
+require 'herbivore'
+require 'lifeform'
+
 describe Rabbit do
 
   let (:world) { World.new(100) }

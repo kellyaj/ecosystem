@@ -1,3 +1,4 @@
+require 'ecosystem'
 require 'pry'
 class LifeForm
 

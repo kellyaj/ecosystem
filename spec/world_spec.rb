@@ -1,4 +1,7 @@
 require 'world'
+require 'lifeform'
+require 'plant'
+
 describe World do
 
   describe "#startup" do

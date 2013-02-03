@@ -1,7 +1,6 @@
-# if lifeform health > 5, reproduce (lifeform.new)
-#
+require 'ecosystem'
 require 'pry'
-require 'lifeform'
+
 class World
 
   attr_accessor :land, :day, :lifeforms

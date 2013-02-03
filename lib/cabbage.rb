@@ -1,6 +1,4 @@
-require 'Lifeform'
-require 'plant'
-
+require 'ecosystem'
 class Cabbage < Plant
 
   def initialize(world, position)

@@ -1,5 +1,5 @@
-require 'lifeform'
-class Rabbit < LifeForm
+require 'ecosystem'
+class Rabbit < Herbivore
 
   def initialize(world, position)
     super(world, position)

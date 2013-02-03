@@ -1,0 +1,2 @@
+require 'animal'
+require 'world'
