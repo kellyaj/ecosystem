@@ -1,12 +1,11 @@
 require 'Lifeform'
 class Cabbage < LifeForm
 
-  attr_accessor :movement, :lifespan, :age, :position
+  attr_accessor :movement, :lifespan, :position
 
   def initialize(world, position)
     @movement = 0
     @lifespan = 100
-    @age = 0
     @position = position
     @world = world
   end

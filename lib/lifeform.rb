@@ -2,11 +2,14 @@ require 'cabbage'
 
 class LifeForm
 
+  attr_accessor :age
 
   def initialize
+    @age = 0
   end
 
-  def old_age?
-
+  def cycle
+    @age += 1
   end
+
 end
