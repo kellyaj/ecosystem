@@ -1,5 +1,3 @@
-require 'cabbage'
-
 class LifeForm
 
   attr_accessor :age

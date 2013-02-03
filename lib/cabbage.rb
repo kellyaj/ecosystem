@@ -4,6 +4,7 @@ class Cabbage < LifeForm
   attr_accessor :movement, :lifespan, :position
 
   def initialize(world, position)
+    super()
     @movement = 0
     @lifespan = 100
     @position = position
