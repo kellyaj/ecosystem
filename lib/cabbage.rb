@@ -1,4 +1,5 @@
-require 'ecosystem'
+require 'plant'
+
 class Cabbage < Plant
 
   def initialize(world, position)
