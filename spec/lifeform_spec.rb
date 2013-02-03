@@ -20,6 +20,11 @@ describe "LifeForm" do
       life.position = 1
       life.position.should == 1
     end
+
+    it "should be born with a breeding age" do
+      life.breeding_age = 1
+      life.breeding_age.should == 1
+    end
   end
 
   describe "#cycling" do
@@ -40,6 +45,7 @@ describe "LifeForm" do
         life.cycle
       end
       life.age.should == 100
+      life.world.lifeforms.should_not include(life)
     end
   end
 

@@ -1,6 +1,6 @@
 class LifeForm
 
-  attr_accessor :age, :lifespan, :position, :world
+  attr_accessor :age, :lifespan, :position, :world, :breeding_age
 
   def initialize(world, position)
     @world = world

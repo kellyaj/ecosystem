@@ -84,7 +84,7 @@ describe World do
     it "should check for old age deaths after each cycle" do
       world.add_lifeform(Cabbage.new(self,1))
       world.population.should == 1
-      world.cycle(100)
+      world.cycle(130)
       world.population.should == 0
     end
   end

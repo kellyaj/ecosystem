@@ -31,7 +31,18 @@ describe Cabbage do
     end
 
     it "should have a lifespan of 100 days" do
-      c.lifespan.should == 100
+      c.lifespan.should == 130
+    end
+
+    it "should die at the end of its lifespan" do
+      130.times do
+        c.cycle
+      end
+      c.world.lifeforms.should_not include(c)
+    end
+
+    it "should have a breeding age of 90" do
+      c.breeding_age.should == 90
     end
 
   end

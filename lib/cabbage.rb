@@ -6,7 +6,8 @@ class Cabbage < LifeForm
   def initialize(world, position)
     super(world, position)
     @movement = 0
-    @lifespan = 100
+    @lifespan = 130
+    @breeding_age = 90
   end
 
   def cycle
