@@ -26,12 +26,35 @@ describe "LifeForm" do
       life.breeding_age = 1
       life.breeding_age.should == 1
     end
+
+    it "should be born with a specific amount of health" do
+      life.health = 10
+      life.health.should == 10
+    end
+
+    it "should be born with a movement number" do
+      life.movement = 1
+      life.movement.should == 1
+    end
+
+    it "should be born with a breeding delay" do
+      life.breeding_delay = 5
+      life.breeding_delay.should == 5
+    end
   end
 
   describe "#cycling" do
     it "should gain 1 age every cycle" do
       life.cycle
       life.age.should == 1
+    end
+
+    it "should use its movement points every cycle" do
+      life.movement = 1
+      world.add_lifeform(life)
+      old_position = life.position
+      life.cycle
+      life.position.should_not == old_position
     end
   end
 

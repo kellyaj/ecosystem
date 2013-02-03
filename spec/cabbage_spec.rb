@@ -23,6 +23,10 @@ describe Cabbage do
       c.world.land[1].should include(c)
     end
 
+    it "should be born with 10 health" do
+      c.health.should == 10
+    end
+
   end
 
   describe "#attributes" do
