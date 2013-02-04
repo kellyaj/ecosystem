@@ -1,3 +1,4 @@
+require 'pry'
 require 'plant'
 
 class Garlic < Plant

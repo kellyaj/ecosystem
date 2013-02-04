@@ -10,8 +10,7 @@ describe Garlic do
   end
 
   describe "#birth" do
-    it "should be born into the world" do
-      world.add_lifeform(g)
+    it "it should be born into the world" do
       world.population.should == 1
     end
 
