@@ -22,7 +22,7 @@ class Herbivore < Animal
 
   def eat_plant
     plant = @food_source.first
-    @health += plant.health
+    @health += (plant.health / 2)
     @food_source.delete(plant)
     plant.kill
   end

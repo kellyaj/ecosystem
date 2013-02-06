@@ -16,6 +16,6 @@ describe "Herbivore" do
     world.lifeforms.count.should == 2
     world.cycle(1)
     world.lifeforms.count.should == 1
-    herby.health.should == 40
+    herby.health.should == 35
   end
 end
