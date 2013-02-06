@@ -76,5 +76,13 @@ describe World do
       world.day.should == 101
     end
 
+    it "should cycle each lifeform when the world cycles" do
+      c = Cabbage.new(world,1)
+      world.add_lifeform(c)
+      world.day.should == 1
+      world.cycle(1)
+      world.lifeforms.first.age.should == 1
+    end
+
   end
 end

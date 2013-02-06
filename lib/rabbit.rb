@@ -18,7 +18,3 @@ class Rabbit < Herbivore
   end
 end
 
-# when it eats something, it gains that objects health
-# health is lost after every day after last meal
-# reproduction is limited based on health
-# delay breeding based on recovery time
