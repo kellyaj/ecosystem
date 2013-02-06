@@ -14,9 +14,7 @@ class Herbivore < Animal
   end
 
   def food_source_tile?
-    @world.land[@position].each do |lifeform|
-      @food_source << lifeform if lifeform.is_a?(Plant)
-    end
+    @world.land[@position].each { |lifeform| @food_source << lifeform if lifeform.is_a?(Plant) }
     @food_source.size >= 1
   end
 
