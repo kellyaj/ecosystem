@@ -53,10 +53,16 @@ describe Rabbit do
       world.population.should == 2
     end
 
-    it "should test" do
-      100.times do
-        r.cycle
-      end
+    it "should inherit the eat actions from herbivore" do
+      c2 = Cabbage.new(world,49)
+      c3 = Cabbage.new(world,51)
+      world.add_lifeform(c2)
+      world.add_lifeform(c3)
+      world.population.should == 3
+      world.cycle(1)
+      world.population.should == 2
+      r.health.should == 105
     end
+
   end
 end
