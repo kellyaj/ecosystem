@@ -31,7 +31,7 @@ class World
     amount.times do
       @day += 1
       @lifeforms.each {|lifeform| lifeform.cycle }
-      same_space_check
+      #same_space_check
     end
   end
 
