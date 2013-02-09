@@ -1,6 +1,7 @@
 require 'world'
 require 'lifeform'
 require 'plant'
+require 'cabbage'
 
 describe World do
 
